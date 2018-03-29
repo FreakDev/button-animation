@@ -42,7 +42,7 @@ div button {
   color: white;
   letter-spacing: 1px;
   font-size: 24px;
-  transition: width 1s, opacity 1s;
+  transition: width 1s;
 }
 
 .reduce-width{
@@ -50,7 +50,6 @@ div button {
 }
 
 .circle{
-  /*opacity: 0;*/
   width: 60px;
   height: 60px;
   border-radius: 50%;
