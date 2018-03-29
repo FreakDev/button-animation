@@ -1,76 +1,77 @@
 @-webkit-keyframes myAnimation{
-    0% {
-      transform: translateX(0px);
-    }
-    50% {
-      opacity: 1;
-    }
-    100% {
-      transform: translateX(-150px);
-    }
+  0% {
+    transform: translateX(0px);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-150px);
+  }
 }
-  
-  @keyframes myAnimation{
-    0% {
-      transform: translateX(0px);
-    }
-    50% {
-      opacity: 1;
-    }
-    100% {
-      transform: translateX(-150px);
-    }
+
+@keyframes myAnimation{
+  0% {
+    transform: translateX(0px);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-150px);
+  }
 }
-  div{
-    position: relative;
-    display: block;
-    text-align: center;
+div{
+  position: relative;
+  display: block;
+  text-align: center;
 }
-  div button {
-    background: orange;
-    color: white;
-    font-size: 12px;
-    display: block;
-    position: relative;
-    margin: 0 auto;
-    padding: 0;
-    width: 200px;
-    height: 70px;
-    border: 2px solid orange;
-    border-radius: 4px;
-    background: orange;
-    color: white;
-    letter-spacing: 1px;
-    font-size: 24px;
-    transition: width 1s, opacity 1s;
+div button {
+  background: orange;
+  color: white;
+  font-size: 12px;
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  padding: 0;
+  width: 200px;
+  height: 70px;
+  border: 2px solid orange;
+  border-radius: 4px;
+  background: orange;
+  color: white;
+  letter-spacing: 1px;
+  font-size: 24px;
+  transition: width 1s, opacity 1s;
 }
 
 .reduce-width{
-    width: 10px;
+  width: 10px;
 }
-  
+
 .circle{
-    /*opacity: 0;*/
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    border: 5px solid grey;
-    position: relative;
-    top: 0px;
-    margin: 0 auto;
-    animation: myAnimation 2s forwards;
-    -webkit-animation: myAnimation 2s forwards;  
+  /*opacity: 0;*/
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 5px solid grey;
+  position: relative;
+  top: 0px;
+  margin: 0 auto;
+  animation: myAnimation 2s forwards;
+  -webkit-animation: myAnimation 2s forwards;  
 }
 
 /*
 .progress-circle {
-    opacity: 1;
-    -webkit-animation: myAnimation 2s forwards;
-    animation: myAnimation 2s forwards;
-    -webkit-animation-delay: 2s;
-    animation-delay: 2s;
+  opacity: 1;
+  -webkit-animation: myAnimation 2s forwards;
+  animation: myAnimation 2s forwards;
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
 }
 */
+  
   
   
   
