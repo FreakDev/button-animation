@@ -21,12 +21,70 @@
     transform: translateX(-150px);
   }
 }
+
+@-webkit-keyframes textAnimation {
+  0% {
+    transform: translateX(0px);
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(130px);
+    opacity: 1;
+  }
+}
+
+@keyframes textAnimation {
+  0% {
+    transform: translateX(0px);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0;
+  }
+  70%{
+    opacity: 0.6
+  }
+  100% {
+    transform: translateX(130px);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes tickAnimation {
+  0% {
+    opacity: 0;
+  }
+  50%{
+    font-size: 12px;
+
+  }
+  100%{
+    opacity: 1;
+    font-size: 16px;
+  }
+}
+@keyframes tickAnimation {
+  0% {
+    opacity: 0;
+  }
+  50%{
+    font-size: 12px;
+
+  }
+  100%{
+    opacity: 1;
+    font-size: 16px;
+  }
+}
+
 div{
   position: relative;
   display: block;
   text-align: center;
 }
-div button {
+
+.initial-state {
   background: orange;
   color: white;
   font-size: 12px;
@@ -42,18 +100,22 @@ div button {
   color: white;
   letter-spacing: 1px;
   font-size: 24px;
-  transition: width 1s;
+  opacity: 1;
+  transition: width 1s, opacity 1s;
 }
 
 .reduce-width{
   width: 10px;
+  opacity: 0;
 }
 
 .circle{
+  opacity: 1;
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  border: 5px solid grey;
+  background-color: white;
+  border: 5px solid orange;
   position: relative;
   top: 0px;
   margin: 0 auto;
@@ -61,17 +123,51 @@ div button {
   -webkit-animation: myAnimation 2s forwards;  
 }
 
-/*
-.progress-circle {
-  opacity: 1;
-  -webkit-animation: myAnimation 2s forwards;
-  animation: myAnimation 2s forwards;
-  -webkit-animation-delay: 2s;
-  animation-delay: 2s;
+.tick{
+  left: -150px;
+  top: -60px;
+  font-size: 5px;
+  background-color: transparent;
+  position: relative;
+  border: 5px solid orange;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  opacity: 0;
+  /*transition: opacity 2s, font-size 1s;*/
 }
-*/
-  
-  
+
+.tick-appear {
+  animation: tickAnimation 2s forwards;
+}
+
+.stay-hidden{
+  opacity: 0
+}
+
+.text {
+  position: relative;
+  left: -110px;
+  top: -110px;
+  opacity: 0;
+}
+
+.text-appear {
+  font-size: 14px;
+  text-transform: uppercase;
+  animation: textAnimation 3s forwards;
+  -webkit-animation: textAnimation 3s forwards;
+}
+
+#btn-test {
+  top: 300px;
+  position: relative;
+  height: 40px;
+  width: 100px;
+  background-color: white;
+  border: 3px solid black;
+  color: black;
+}
   
   
   
