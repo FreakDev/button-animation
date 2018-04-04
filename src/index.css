@@ -1,4 +1,4 @@
-@-webkit-keyframes myAnimation{
+@-webkit-keyframes circleAnimation{
   0% {
     transform: translateX(0px);
   }
@@ -10,7 +10,7 @@
   }
 }
 
-@keyframes myAnimation{
+@keyframes circleAnimation{
   0% {
     transform: translateX(0px);
   }
@@ -110,18 +110,24 @@ div{
 }
 
 .circle{
-  opacity: 1;
+  opacity: 0;
   width: 60px;
   height: 60px;
   border-radius: 50%;
   background-color: white;
   border: 5px solid orange;
   position: relative;
-  top: 0px;
-  margin: 0 auto;
-  animation: myAnimation 2s forwards;
-  -webkit-animation: myAnimation 2s forwards;  
+  top: -70px;
+  left: 46%;
+  transition: opacity 2s, left 2s,
 }
+
+.circle-animation {
+  left: 25%;
+  opacity: 1;
+}
+  /*animation: circleAnimation 2s forwards;
+  -webkit-animation: circleAnimation 2s forwards;  */
 
 .tick{
   left: -150px;
