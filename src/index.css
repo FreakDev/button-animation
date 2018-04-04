@@ -1,26 +1,4 @@
-@-webkit-keyframes circleAnimation{
-  0% {
-    transform: translateX(0px);
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(-150px);
-  }
-}
 
-@keyframes circleAnimation{
-  0% {
-    transform: translateX(0px);
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(-150px);
-  }
-}
 
 @-webkit-keyframes textAnimation {
   0% {
@@ -49,32 +27,6 @@
   100% {
     transform: translateX(130px);
     opacity: 1;
-  }
-}
-@-webkit-keyframes tickAnimation {
-  0% {
-    opacity: 0;
-  }
-  50%{
-    font-size: 12px;
-
-  }
-  100%{
-    opacity: 1;
-    font-size: 16px;
-  }
-}
-@keyframes tickAnimation {
-  0% {
-    opacity: 0;
-  }
-  50%{
-    font-size: 12px;
-
-  }
-  100%{
-    opacity: 1;
-    font-size: 16px;
   }
 }
 
@@ -130,21 +82,22 @@ div{
   -webkit-animation: circleAnimation 2s forwards;  */
 
 .tick{
-  left: -150px;
-  top: -60px;
+  left: -205px;
+  top: -135px;
   font-size: 5px;
   background-color: transparent;
   position: relative;
-  border: 5px solid orange;
+  border: 0px;
   border-radius: 50%;
   width: 60px;
   height: 60px;
   opacity: 0;
-  /*transition: opacity 2s, font-size 1s;*/
+  transition: opacity 2s, font-size 1s;
 }
 
 .tick-appear {
-  animation: tickAnimation 2s forwards;
+  opacity: 1;
+  font-size: 20px
 }
 
 .stay-hidden{

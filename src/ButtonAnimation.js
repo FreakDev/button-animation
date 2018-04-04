@@ -41,11 +41,11 @@ export default class ButtonAnimation extends React.Component {
             console.log('transition terminée')
             circle.className = 'circle ' + 'circle-animation';
         });
-        /*
+        
         let tick = this.tickRef;
         this.loadingCircleRef.addEventListener('transitionend', function(){
             tick.className = 'tick ' + 'tick-appear'
-        })*/
+        })
         // calcul le prochain état que devra prendre l'application
         let currentStateIndex = STATES.indexOf(this.state.current) 
         let nextStateIndex = currentStateIndex + 1 
@@ -91,11 +91,8 @@ export default class ButtonAnimation extends React.Component {
                     {/* affecte une classe différente à chaque élément en fonction de l'état du composant */}
                     <button className= {'initial-state ' + buttonClass} ref = {this.setButtonRef} onClick={this.handleClick}>submit</button>
                     <div className = {'circle ' + this.loadingCircleRef} ref={this.setLoadingCircleRef}></div>
+                    <button className= {'tick ' + this.tickRef} ref={this.setTickRef}>tick</button>
                 </div>
-                <div>
-                    <button className= {'tick ' + apparitionTick}>tick</button>
-                </div>
-                
                 <div>
                     <p className={'text ' + orderConfirmed}>commande confirmée</p>
                 </div>
