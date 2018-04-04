@@ -15,7 +15,7 @@ export default class ButtonAnimation extends React.Component {
     constructor (props) {
         super(props)
  
-        this.buttonRef;
+        this.buttonRef = null;
         this.setButtonRef = buttonElement => {
             this.buttonRef = buttonElement;
         }
@@ -27,6 +27,10 @@ export default class ButtonAnimation extends React.Component {
             this.tickRef = tick
         }
         
+        this.textRef = null;
+        this.setTextRef = texte => {
+            this.textRef = texte;
+        }
         // créer l'état initial (avant clic)
         this.state = {
             current: INITIAL_STATE 
@@ -45,6 +49,11 @@ export default class ButtonAnimation extends React.Component {
         let tick = this.tickRef;
         this.loadingCircleRef.addEventListener('transitionend', function(){
             tick.className = 'tick ' + 'tick-appear'
+        })
+
+        let texte = this.textRef;
+        this.tickRef.addEventListener('transitionend', function(){
+            texte.className = 'text ' + 'text-appear'
         })
         // calcul le prochain état que devra prendre l'application
         let currentStateIndex = STATES.indexOf(this.state.current) 
@@ -92,9 +101,9 @@ export default class ButtonAnimation extends React.Component {
                     <button className= {'initial-state ' + buttonClass} ref = {this.setButtonRef} onClick={this.handleClick}>submit</button>
                     <div className = {'circle ' + this.loadingCircleRef} ref={this.setLoadingCircleRef}></div>
                     <button className= {'tick ' + this.tickRef} ref={this.setTickRef}>tick</button>
+                    <p className={'text ' + this.textRef} ref={this.setTextRef}>commande confirmée</p>
                 </div>
                 <div>
-                    <p className={'text ' + orderConfirmed}>commande confirmée</p>
                 </div>
                 <button id="btn-test" onClick={this.handleClick}>test</button>
             </div>

@@ -78,8 +78,6 @@ div{
   left: 25%;
   opacity: 1;
 }
-  /*animation: circleAnimation 2s forwards;
-  -webkit-animation: circleAnimation 2s forwards;  */
 
 .tick{
   left: -205px;
@@ -107,15 +105,18 @@ div{
 .text {
   position: relative;
   left: -110px;
-  top: -110px;
+  top: -180px;
+  font-size: 14px;
+  text-transform: uppercase;
   opacity: 0;
+  transition: opacity 2s, left 2s;
 }
 
 .text-appear {
-  font-size: 14px;
-  text-transform: uppercase;
-  animation: textAnimation 3s forwards;
-  -webkit-animation: textAnimation 3s forwards;
+  opacity: 1;
+  left: 0px;
+  /*animation: textAnimation 3s forwards;
+  -webkit-animation: textAnimation 3s forwards;*/
 }
 
 #btn-test {
