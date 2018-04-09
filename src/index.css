@@ -1,5 +1,4 @@
 
-
 @-webkit-keyframes textAnimation {
   0% {
     transform: translateX(0px);
@@ -80,7 +79,7 @@ div{
 }
 
 .tick{
-  left: -205px;
+  left: -177px;
   top: -135px;
   font-size: 5px;
   background-color: transparent;
@@ -109,7 +108,7 @@ div{
   font-size: 14px;
   text-transform: uppercase;
   opacity: 0;
-  transition: opacity 2s, left 2s;
+  transition: opacity 3s, left 2s;
 }
 
 .text-appear {

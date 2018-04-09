@@ -27,10 +27,6 @@ export default class ButtonAnimation extends React.Component {
             this.tickRef = tick
         }
         
-        this.textRef = null;
-        this.setTextRef = texte => {
-            this.textRef = texte;
-        }
         // créer l'état initial (avant clic)
         this.state = {
             current: INITIAL_STATE 
@@ -39,22 +35,31 @@ export default class ButtonAnimation extends React.Component {
         this.handleClick = this.handleClick.bind(this)
     }
 
-    handleClick(){
-        let circle = this.loadingCircleRef
+    componentDidMount() {
+        var that = this
         this.buttonRef.addEventListener('transitionend', function(){
-            console.log('transition terminée')
-            circle.className = 'circle ' + 'circle-animation';
-        });
+            that.setState({
+                current: STATES[2]
+            })
+        console.log('1- state: ' + that.state.current)
+        })
         
-        let tick = this.tickRef;
         this.loadingCircleRef.addEventListener('transitionend', function(){
-            tick.className = 'tick ' + 'tick-appear'
+            that.setState({
+                current: STATES[3]
+            })
+        console.log('2- state: ' + that.state.current)
         })
-
-        let texte = this.textRef;
         this.tickRef.addEventListener('transitionend', function(){
-            texte.className = 'text ' + 'text-appear'
+            that.setState({
+                current: STATES[4]
+            })
+        console.log('3- state: ' + that.state.current)
         })
+    }
+    
+    handleClick(){
+        
         // calcul le prochain état que devra prendre l'application
         let currentStateIndex = STATES.indexOf(this.state.current) 
         let nextStateIndex = currentStateIndex + 1 
@@ -69,29 +74,33 @@ export default class ButtonAnimation extends React.Component {
         })
     }
     render() {
+        
         let buttonClass;
+        let circleClass;
         let apparitionTick;
         let orderConfirmed;
-    
+        
         switch(this.state.current){
 
             case STEP1:
                 buttonClass = 'reduce-width'
             break
-            default: buttonClass = 'initial-state'
-            /*case STEP2:
-                buttonClass = 'circle'
+                case STEP2:
+                buttonClass = 'stay-hidden'
+                circleClass = 'circle-animation'
             break
             
             case STEP3:
                 buttonClass = 'stay-hidden' 
                 apparitionTick = 'tick-appear'
+                circleClass ='circle-animation'
             break;
             case STEP4:
                 buttonClass = 'stay-hidden'
-                orderConfirmed = 'text-appear'
                 apparitionTick = 'tick-appear'
-            break;*/
+                orderConfirmed = 'text-appear'
+                circleClass ='circle-animation'
+            break;
         }
         
         return (
@@ -99,9 +108,9 @@ export default class ButtonAnimation extends React.Component {
                 <div id="div"> 
                     {/* affecte une classe différente à chaque élément en fonction de l'état du composant */}
                     <button className= {'initial-state ' + buttonClass} ref = {this.setButtonRef} onClick={this.handleClick}>submit</button>
-                    <div className = {'circle ' + this.loadingCircleRef} ref={this.setLoadingCircleRef}></div>
-                    <button className= {'tick ' + this.tickRef} ref={this.setTickRef}>tick</button>
-                    <p className={'text ' + this.textRef} ref={this.setTextRef}>commande confirmée</p>
+                    <div className = {'circle ' + circleClass} ref={this.setLoadingCircleRef}></div>
+                    <button className= {'tick ' + apparitionTick} ref={this.setTickRef}>tick</button>
+                    <p className={'text ' + orderConfirmed} >commande confirmée</p>
                 </div>
                 <div>
                 </div>
