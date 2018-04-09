@@ -1,34 +1,4 @@
 
-@-webkit-keyframes textAnimation {
-  0% {
-    transform: translateX(0px);
-  }
-  50% {
-    opacity: 0.5;
-  }
-  100% {
-    transform: translateX(130px);
-    opacity: 1;
-  }
-}
-
-@keyframes textAnimation {
-  0% {
-    transform: translateX(0px);
-    opacity: 0;
-  }
-  30% {
-    opacity: 0;
-  }
-  70%{
-    opacity: 0.6
-  }
-  100% {
-    transform: translateX(130px);
-    opacity: 1;
-  }
-}
-
 div{
   position: relative;
   display: block;
@@ -114,8 +84,6 @@ div{
 .text-appear {
   opacity: 1;
   left: 0px;
-  /*animation: textAnimation 3s forwards;
-  -webkit-animation: textAnimation 3s forwards;*/
 }
 
 #btn-test {
