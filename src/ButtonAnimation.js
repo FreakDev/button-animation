@@ -23,43 +23,30 @@ export default class ButtonAnimation extends React.Component {
         this.setLoadingCircleRef = loadingCircle => {
             this.loadingCircleRef = loadingCircle;
         }
+        this.tickRef = null;
         this.setTickRef = tick => {
             this.tickRef = tick
         }
-        
-        // créer l'état initial (avant clic)
         this.state = {
             current: INITIAL_STATE 
         }
-        // fix le "this" de la fonction handleClick
         this.handleClick = this.handleClick.bind(this)
+        this.goNextState = this.goNextState.bind(this)
     }
 
     componentDidMount() {
-        var that = this
-        this.buttonRef.addEventListener('transitionend', function(){
-            that.setState({
-                current: STATES[2]
-            })
-        console.log('1- state: ' + that.state.current)
-        })
-        
-        this.loadingCircleRef.addEventListener('transitionend', function(){
-            that.setState({
-                current: STATES[3]
-            })
-        console.log('2- state: ' + that.state.current)
-        })
-        this.tickRef.addEventListener('transitionend', function(){
-            that.setState({
-                current: STATES[4]
-            })
-        console.log('3- state: ' + that.state.current)
-        })
+        this.buttonRef.addEventListener('transitionend', this.goNextState)
+        this.loadingCircleRef.addEventListener('transitionend', this.goNextState)
+        this.tickRef.addEventListener('transitionend', this.goNextState)
+    }
+    componentWillUnmount() {
+        this.buttonRef.addEventListener('transitionend', this.goNextState)
+        this.loadingCircleRef.addEventListener('transitionend', this.goNextState)
+        this.tickRef.addEventListener('transitionend', this.goNextState)
     }
     
-    handleClick(){
-        
+    goNextState () {
+
         // calcul le prochain état que devra prendre l'application
         let currentStateIndex = STATES.indexOf(this.state.current) 
         let nextStateIndex = currentStateIndex + 1 
@@ -73,6 +60,10 @@ export default class ButtonAnimation extends React.Component {
             current: STATES[nextStateIndex] 
         })
     }
+
+    handleClick(){
+        this.goNextState()
+    }
     render() {
         
         let buttonClass;
@@ -85,7 +76,7 @@ export default class ButtonAnimation extends React.Component {
             case STEP1:
                 buttonClass = 'reduce-width'
             break
-                case STEP2:
+            case STEP2:
                 buttonClass = 'stay-hidden'
                 circleClass = 'circle-animation'
             break
