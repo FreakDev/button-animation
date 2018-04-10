@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import ButtonAnimation from './ButtonAnimation'
+import Page from './Page'
 
-ReactDOM.render(<ButtonAnimation />, document.getElementById('root'));
+
+ReactDOM.render(<Page />, document.getElementById('root'));
 
