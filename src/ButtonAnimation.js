@@ -18,15 +18,10 @@ export default class ButtonAnimation extends React.Component {
         this.state = {
             current: INITIAL_STATE 
         }
-        this.handleButtonTransition = this.handleButtonTransition.bind(this)
-        this.handleClick = this.handleClick.bind(this)
+        this.goNextState = this.goNextState.bind(this)
     }
 
-    handleButtonTransition() {
-        this.handleClick()
-    }
-
-    handleClick () {
+    goNextState () {
 
         // calcul le prochain état que devra prendre l'application
         let currentStateIndex = STATES.indexOf(this.state.current) 
@@ -77,14 +72,12 @@ export default class ButtonAnimation extends React.Component {
             <div>
                 <div id="div"> 
                     {/* affecte une classe différente à chaque élément en fonction de l'état du composant */}
-                    <button className= {'initial-state ' + buttonClass} onTransitionEnd={this.handleButtonTransition} onClick= {this.handleClick} >submit</button>
-                    <div className = {'circle ' + circleClass} onTransitionEnd= {this.handleTransition} ></div>
-                    <button className= {'tick ' + apparitionTick} onTransitionEnd={this.handleTransition} >tick</button>
+                    <button className= {'initial-state ' + buttonClass} onTransitionEnd={this.goNextState} onClick= {this.goNextState} >submit</button>
+                    <div className = {'circle ' + circleClass}  ></div>
+                    <button className= {'tick ' + apparitionTick} >tick</button>
                     <p className={'text ' + orderConfirmed} >commande confirmée</p>
                 </div>
-                <div>
-                </div>
-                <button id="btn-test" onClick={this.handleClick}>test</button>
+                <button id="btn-test" onClick={this.goNextState}>test</button>
             </div>
         );    
     }

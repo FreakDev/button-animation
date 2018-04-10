@@ -1,5 +1,5 @@
 
-div{
+#div{
   position: relative;
   display: block;
   text-align: center;
@@ -89,6 +89,7 @@ div{
 }
 
 #btn-test {
+  display: block; 
   top: 300px;
   position: relative;
   height: 40px;
@@ -96,6 +97,7 @@ div{
   background-color: white;
   border: 3px solid black;
   color: black;
+  margin: 0 auto;
 }
   
   
