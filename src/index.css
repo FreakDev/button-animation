@@ -22,7 +22,7 @@ div{
   letter-spacing: 1px;
   font-size: 24px;
   opacity: 1;
-  transition: width 1s, opacity 1s;
+  transition: width 2s, opacity 2s;
 }
 
 .reduce-width{
@@ -40,7 +40,7 @@ div{
   position: relative;
   top: -70px;
   left: 46%;
-  transition: opacity 2s, left 2s,
+  transition: opacity 2s, left 1s,
 }
 
 .circle-animation {
@@ -59,7 +59,7 @@ div{
   width: 60px;
   height: 60px;
   opacity: 0;
-  transition: opacity 2s, font-size 1s;
+  transition: opacity 4s, font-size 4s;
 }
 
 .tick-appear {

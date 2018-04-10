@@ -14,7 +14,7 @@ export default class ButtonAnimation extends React.Component {
 
     constructor (props) {
         super(props)
- 
+        /*
         this.buttonRef = null;
         this.setButtonRef = buttonElement => {
             this.buttonRef = buttonElement;
@@ -26,14 +26,22 @@ export default class ButtonAnimation extends React.Component {
         this.tickRef = null;
         this.setTickRef = tick => {
             this.tickRef = tick
-        }
+        }*/
         this.state = {
             current: INITIAL_STATE 
         }
-        this.handleClick = this.handleClick.bind(this)
-        this.goNextState = this.goNextState.bind(this)
+        this.handleButtonTransition = this.handleButtonTransition.bind(this)
+        //this.goNextState = this.goNextState.bind(this)
     }
 
+    handleButtonTransition() {
+        this.handleClick()
+        /*this.setState({
+            current: STATES[2]
+        })*/
+        console.log(('transition bouton'))
+    }
+    /*
     componentDidMount() {
         this.buttonRef.addEventListener('transitionend', this.goNextState)
         this.loadingCircleRef.addEventListener('transitionend', this.goNextState)
@@ -44,8 +52,8 @@ export default class ButtonAnimation extends React.Component {
         this.loadingCircleRef.addEventListener('transitionend', this.goNextState)
         this.tickRef.addEventListener('transitionend', this.goNextState)
     }
-    
-    goNextState () {
+    */
+    handleClick= () => {
 
         // calcul le prochain état que devra prendre l'application
         let currentStateIndex = STATES.indexOf(this.state.current) 
@@ -59,11 +67,12 @@ export default class ButtonAnimation extends React.Component {
         this.setState({
             current: STATES[nextStateIndex] 
         })
+    
     }
-
+    /*
     handleClick(){
         this.goNextState()
-    }
+    }*/
     render() {
         
         let buttonClass;
@@ -98,9 +107,9 @@ export default class ButtonAnimation extends React.Component {
             <div>
                 <div id="div"> 
                     {/* affecte une classe différente à chaque élément en fonction de l'état du composant */}
-                    <button className= {'initial-state ' + buttonClass} ref = {this.setButtonRef} onClick={this.handleClick}>submit</button>
-                    <div className = {'circle ' + circleClass} ref={this.setLoadingCircleRef}></div>
-                    <button className= {'tick ' + apparitionTick} ref={this.setTickRef}>tick</button>
+                    <button className= {'initial-state ' + buttonClass} onTransitionEnd={this.handleButtonTransition} onClick= {this.handleClick} >submit</button>
+                    <div className = {'circle ' + circleClass} onTransitionEnd= {this.handleTransition} ></div>
+                    <button className= {'tick ' + apparitionTick} onTransitionEnd={this.handleTransition} >tick</button>
                     <p className={'text ' + orderConfirmed} >commande confirmée</p>
                 </div>
                 <div>
