@@ -14,46 +14,19 @@ export default class ButtonAnimation extends React.Component {
 
     constructor (props) {
         super(props)
-        /*
-        this.buttonRef = null;
-        this.setButtonRef = buttonElement => {
-            this.buttonRef = buttonElement;
-        }
-        this.loadingCircleRef = null;
-        this.setLoadingCircleRef = loadingCircle => {
-            this.loadingCircleRef = loadingCircle;
-        }
-        this.tickRef = null;
-        this.setTickRef = tick => {
-            this.tickRef = tick
-        }*/
+
         this.state = {
             current: INITIAL_STATE 
         }
         this.handleButtonTransition = this.handleButtonTransition.bind(this)
-        //this.goNextState = this.goNextState.bind(this)
+        this.handleClick = this.handleClick.bind(this)
     }
 
     handleButtonTransition() {
         this.handleClick()
-        /*this.setState({
-            current: STATES[2]
-        })*/
-        console.log(('transition bouton'))
     }
-    /*
-    componentDidMount() {
-        this.buttonRef.addEventListener('transitionend', this.goNextState)
-        this.loadingCircleRef.addEventListener('transitionend', this.goNextState)
-        this.tickRef.addEventListener('transitionend', this.goNextState)
-    }
-    componentWillUnmount() {
-        this.buttonRef.addEventListener('transitionend', this.goNextState)
-        this.loadingCircleRef.addEventListener('transitionend', this.goNextState)
-        this.tickRef.addEventListener('transitionend', this.goNextState)
-    }
-    */
-    handleClick= () => {
+
+    handleClick () {
 
         // calcul le prochain état que devra prendre l'application
         let currentStateIndex = STATES.indexOf(this.state.current) 
@@ -69,10 +42,7 @@ export default class ButtonAnimation extends React.Component {
         })
     
     }
-    /*
-    handleClick(){
-        this.goNextState()
-    }*/
+    
     render() {
         
         let buttonClass;
@@ -91,7 +61,7 @@ export default class ButtonAnimation extends React.Component {
             break
             
             case STEP3:
-                buttonClass = 'stay-hidden' 
+                buttonClass = 'stay-hidden'
                 apparitionTick = 'tick-appear'
                 circleClass ='circle-animation'
             break;
