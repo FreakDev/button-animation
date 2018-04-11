@@ -9,7 +9,7 @@
   background: orange;
   color: white;
   font-size: 12px;
-  display: block;
+  display: flex;
   position: relative;
   margin: 0 auto;
   padding: 0;
@@ -38,6 +38,7 @@
   background-color: white;
   border: 5px solid orange;
   position: relative;
+  display: flex;
   top: -70px;
   left: 46%;
   transition-duration: 2s;
@@ -50,11 +51,12 @@
 }
 
 .tick{
-  left: -177px;
+  left: 36%;
   top: -135px;
   font-size: 5px;
   background-color: transparent;
   position: relative;
+  display: flex;
   border: 0px;
   border-radius: 50%;
   width: 60px;
@@ -75,18 +77,19 @@
 
 .text {
   position: relative;
-  left: -110px;
+  left: 35%;
   top: -180px;
   font-size: 14px;
   text-transform: uppercase;
+  display:flex;
   opacity: 0;
   transition-duration: 2s;
-  transition-delay: 2s;
+  transition-delay: 3500ms;
 }
 
 .text-appear {
   opacity: 1;
-  left: 0px;
+  left: 50%;
 }
 
 #btn-test {
