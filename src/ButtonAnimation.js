@@ -20,8 +20,19 @@ export default class ButtonAnimation extends React.Component {
         }
         this.goNextState = this.goNextState.bind(this)
     }
-
-    goNextState () {
+    
+    componentWillReceiveProps(){
+       
+        if (this.props.stopAt < 2) {
+            this.state.current = STATES[2]
+        } else {
+                this.setState({
+                    current: STATES[4]
+                })   
+        }
+    }
+    
+    goNextState () { 
 
         // calcul le prochain état que devra prendre l'application
         let currentStateIndex = STATES.indexOf(this.state.current) 
@@ -30,7 +41,7 @@ export default class ButtonAnimation extends React.Component {
         if (nextStateIndex >= STATES.length) { 
             nextStateIndex = 0
         }
-        
+       
         // change la valeur de l'état courant à la prochaine valeur prévue
         this.setState({
             current: STATES[nextStateIndex] 
@@ -49,12 +60,12 @@ export default class ButtonAnimation extends React.Component {
 
             case STEP1:
                 buttonClass = 'reduce-width'
-            break
-            case STEP2:
-                buttonClass = 'stay-hidden'
                 circleClass = 'circle-animation'
             break
-            
+            case STEP2:
+                buttonClass = 'reduce-width'
+                circleClass = 'circle-animation'
+            break
             case STEP3:
                 buttonClass = 'stay-hidden'
                 apparitionTick = 'tick-appear'
@@ -65,20 +76,19 @@ export default class ButtonAnimation extends React.Component {
                 apparitionTick = 'tick-appear'
                 orderConfirmed = 'text-appear'
                 circleClass ='circle-animation'
-            break;
+            break
         }
         
         return (
             <div>
                 <div id="div"> 
                     {/* affecte une classe différente à chaque élément en fonction de l'état du composant */}
-                    <button className= {'initial-state ' + buttonClass} onTransitionEnd={this.goNextState} onClick= {this.goNextState} >submit</button>
-                    <div className = {'circle ' + circleClass}  ></div>
-                    <button className= {'tick ' + apparitionTick} >tick</button>
+                    <button className= {'initial-state ' + buttonClass}  > submit </button>
+                    <div className = {'circle ' + circleClass} > </div>
+                    <button className= {'tick ' + apparitionTick}> tick </button>
                     <p className={'text ' + orderConfirmed} >commande confirmée</p>
                 </div>
-                <button id="btn-test" onClick={this.goNextState}>test</button>
             </div>
-        );    
+        )    
     }
 }

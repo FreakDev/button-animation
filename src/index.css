@@ -40,11 +40,12 @@
   position: relative;
   top: -70px;
   left: 46%;
-  transition: 2s,
+  transition-duration: 2s;
+  transition-delay: 2s;
 }
 
 .circle-animation {
-  left: 25%;
+  left: 35%;
   opacity: 1;
 }
 
@@ -90,7 +91,7 @@
 
 #btn-test {
   display: block; 
-  top: 300px;
+  top: 200px;
   position: relative;
   height: 40px;
   width: 100px;

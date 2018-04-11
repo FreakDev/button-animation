@@ -20,16 +20,17 @@ export default class Page extends React.Component {
         })
     }
 
-    onAnimationEnd () {
+    onAnimationEnd= () => {
         console.log('whole animation ends')
+
     }
 
     render () {
         return (
             <div>
-                <ButtonAnimation stopAt={ this.state.stopAt } onAnimationEnd={ this.onAnimationEnd } />
+                <ButtonAnimation stopAt={ this.state.stopAt } onAnimationEnd={ this.onAnimationEnd} />
 
-                <button onClick={ this.onClick } >trigger</button>
+                <button onClick={ this.onClick} >trigger</button>
             </div>
         )
     }
