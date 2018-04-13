@@ -18,7 +18,7 @@ export default class ButtonAnimation extends React.Component {
         this.state = {
             current: INITIAL_STATE 
         }
-        this.goNextState = this.goNextState.bind(this)
+       // this.goNextState = this.goNextState.bind(this)
     }
     
     componentWillReceiveProps(){
@@ -31,7 +31,7 @@ export default class ButtonAnimation extends React.Component {
                 })   
         }
     }
-    
+    /*
     goNextState () { 
 
         // calcul le prochain état que devra prendre l'application
@@ -48,7 +48,7 @@ export default class ButtonAnimation extends React.Component {
         })
     
     }
-    
+    */
     render() {
         
         let buttonClass;
@@ -83,7 +83,7 @@ export default class ButtonAnimation extends React.Component {
             <div>
                 <div id="div"> 
                     {/* affecte une classe différente à chaque élément en fonction de l'état du composant */}
-                    <button className= {'initial-state ' + buttonClass}  > submit </button>
+                    <div className= {'initial-state ' + buttonClass}  > confirmer la commande </div>
                     <div className = {'circle ' + circleClass} > </div>
                     <button className= {'tick ' + apparitionTick}> tick </button>
                     <p className={'text ' + orderConfirmed} >commande confirmée</p>
