@@ -60,24 +60,21 @@
 }
 
 .tick{
-  left: 36%;
-  top: -135px;
-  font-size: 5px;
+  background-image: url(http://res.cloudinary.com/dgheqdhp3/image/upload/c_scale,h_20,w_20/v1523626758/tick_hxwfkw.png);
+  background-repeat: no-repeat;
+  height: 20px;
+  left: 28%;
+  top: -111px;
   background-color: transparent;
   position: relative;
   display: flex;
-  border: 0px;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
   opacity: 0;
-  transition-duration: 2s;
-  transition-delay: 2s;
+  transition-duration: 1s;
+  transition-delay: 500ms;
 }
 
 .tick-appear {
   opacity: 1;
-  font-size: 20px
 }
 
 .stay-hidden{
@@ -86,19 +83,19 @@
 
 .text {
   position: relative;
-  left: 35%;
-  top: -180px;
-  font-size: 14px;
-  text-transform: uppercase;
+  left: 37%;
+  top: -122px;
+  font-size: 13px;
+  font-family: Sailec-Bold;
+  color: #f27242;
+  font-weight: bold;
   display:flex;
   opacity: 0;
-  transition-duration: 2s;
-  transition-delay: 3500ms;
+  transition-duration: 500ms;
 }
 
 .text-appear {
   opacity: 1;
-  left: 50%;
 }
 
 #btn-test {

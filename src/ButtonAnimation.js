@@ -85,8 +85,8 @@ export default class ButtonAnimation extends React.Component {
                     {/* affecte une classe différente à chaque élément en fonction de l'état du composant */}
                     <div className= {'initial-state ' + buttonClass}  > confirmer la commande </div>
                     <div className = {'circle ' + circleClass} > </div>
-                    <button className= {'tick ' + apparitionTick}> tick </button>
-                    <p className={'text ' + orderConfirmed} >commande confirmée</p>
+                    <div className= {'tick ' + apparitionTick} > </div>
+                    <div className={'text ' + orderConfirmed} >Commande confirmée</div>
                 </div>
             </div>
         )    
