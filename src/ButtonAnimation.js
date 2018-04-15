@@ -24,35 +24,21 @@ export default class ButtonAnimation extends React.Component {
     componentWillReceiveProps(){
        
         if (this.props.stopAt < 2) {
-            this.state.current = STATES[2]
+            this.setState({
+                current: STATES[2]
+            })
         } else {
-                this.setState({
+            this.setState({
                     current: STATES[4]
                 })   
         }
     }
-    /*
-    goNextState () { 
 
-        // calcul le prochain état que devra prendre l'application
-        let currentStateIndex = STATES.indexOf(this.state.current) 
-        let nextStateIndex = currentStateIndex + 1 
-        
-        if (nextStateIndex >= STATES.length) { 
-            nextStateIndex = 0
-        }
-       
-        // change la valeur de l'état courant à la prochaine valeur prévue
-        this.setState({
-            current: STATES[nextStateIndex] 
-        })
-    
-    }
-    */
     render() {
         
         let buttonClass;
         let circleClass;
+        let circleProgress;
         let apparitionTick;
         let orderConfirmed;
         
@@ -64,18 +50,19 @@ export default class ButtonAnimation extends React.Component {
             break
             case STEP2:
                 buttonClass = 'reduce-width'
-                circleClass = 'circle-animation'
+                circleClass = 'circle-progress-appear' //'circle-animation'
             break
             case STEP3:
                 buttonClass = 'stay-hidden'
                 apparitionTick = 'tick-appear'
-                circleClass ='circle-animation'
+                circleProgress ='circle-progress-move'
             break;
             case STEP4:
                 buttonClass = 'stay-hidden'
                 apparitionTick = 'tick-appear'
                 orderConfirmed = 'text-appear'
-                circleClass ='circle-animation'
+                circleProgress = 'circle-progress-move'
+                circleClass ='circle-progress-appear'
             break
         }
         
@@ -84,7 +71,12 @@ export default class ButtonAnimation extends React.Component {
                 <div id="div"> 
                     {/* affecte une classe différente à chaque élément en fonction de l'état du composant */}
                     <div className= {'initial-state ' + buttonClass}  > confirmer la commande </div>
-                    <div className = {'circle ' + circleClass} > </div>
+                    <div className= {'circle-progress ' + circleClass + ' ' + circleProgress }>
+                        <svg class="progress" width="50" height="120" viewBox="0 0 120 120">
+                            <circle cx="60" cy="60" r="54" fill="none" stroke="#e6e6e6" stroke-width="2" />
+                            <circle class="progress__value" cx="60" cy="60" r="54" fill="none" stroke="#f27242" stroke-width="2" />
+                        </svg>
+                    </div>
                     <div className= {'tick ' + apparitionTick} > </div>
                     <div className={'text ' + orderConfirmed} >Commande confirmée</div>
                 </div>

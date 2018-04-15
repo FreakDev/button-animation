@@ -21,7 +21,7 @@
   margin: 20px auto;
   text-decoration: none;
   text-align: center;
-  transition: 1s ease;
+  transition: 0.5s ease;
 }
 
 .initial-state:hover {
@@ -39,38 +39,18 @@
   opacity: 0;
 }
 
-.circle{
-  opacity: 0;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  color: #fff;
-  border: 2px solid #f27242;
-  position: relative;
-  display: flex;
-  top: -70px;
-  left: 46%;
-  transition-duration: 1s;
-  transition-delay: 1s;
-}
-
-.circle-animation {
-  left: 25%;
-  opacity: 1;
-}
-
 .tick{
   background-image: url(http://res.cloudinary.com/dgheqdhp3/image/upload/c_scale,h_20,w_20/v1523626758/tick_hxwfkw.png);
   background-repeat: no-repeat;
   height: 20px;
-  left: 28%;
-  top: -111px;
+  left: 24%;
+  top: -183px;
   background-color: transparent;
   position: relative;
   display: flex;
   opacity: 0;
   transition-duration: 1s;
-  transition-delay: 500ms;
+  transition-delay: 1s;
 }
 
 .tick-appear {
@@ -83,8 +63,8 @@
 
 .text {
   position: relative;
-  left: 37%;
-  top: -122px;
+  left: 32%;
+  top: -197px;
   font-size: 13px;
   font-family: Sailec-Bold;
   color: #f27242;
@@ -92,23 +72,83 @@
   display:flex;
   opacity: 0;
   transition-duration: 500ms;
+  transition-delay: 1s;
 }
 
 .text-appear {
   opacity: 1;
 }
 
-#btn-test {
-  display: block; 
-  top: 200px;
+.circle-progress {
+  display: block;
   position: relative;
-  height: 40px;
-  width: 100px;
-  background-color: white;
-  border: 3px solid black;
-  color: black;
-  margin: 0 auto;
+  top: -105px;
+  left: 46%;
+  opacity: 0;
+  transition: 1s
 }
+
+.circle-progress-appear {
+  opacity: 1;
+}
+
+.circle-progress-move {
+  animation: circle 1s ease forwards;
+}
+.progress {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+.progress__value {
+  stroke-dasharray: 339.292;
+  stroke-dashoffset: 339.292;
+  -webkit-animation: progress 1s infinite;
+          animation: progress 1s infinite;     
+}
+
+@-webkit-keyframes progress {
+  0% {
+    stroke-dashoffset: 339.292;
+  }
+  50%{
+    stroke-dashoffset: 100.292;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes progress {
+  0% {
+    stroke-dashoffset: 339.292;
+  }
+  100%{
+    stroke-dashoffset: 0;
+  }
+}
+
+@-webkit-keyframes circle {
+  0% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+  100%{
+    transform: translateX(-100px)
+  }
+  
+}
+
+@keyframes circle {
+  0% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+  100%{
+    transform: translateX(-25%)
+  }
+}
+
   
   
   
