@@ -18,7 +18,6 @@ export default class ButtonAnimation extends React.Component {
         this.state = {
             current: INITIAL_STATE 
         }
-       // this.goNextState = this.goNextState.bind(this)
     }
     
     componentWillReceiveProps(){
@@ -50,7 +49,7 @@ export default class ButtonAnimation extends React.Component {
             break
             case STEP2:
                 buttonClass = 'reduce-width'
-                circleClass = 'circle-progress-appear' //'circle-animation'
+                circleClass = 'circle-progress-appear'
             break
             case STEP3:
                 buttonClass = 'stay-hidden'
