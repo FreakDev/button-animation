@@ -75,8 +75,8 @@
   background-image: url(http://res.cloudinary.com/dgheqdhp3/image/upload/c_scale,h_15,w_15/v1523967417/tick_fvfccf.png);
   background-repeat: no-repeat;
   height: 20px;
-  left: 22%;
-  top: -225px;
+  left: 23%;
+  top: -224px;
   background-color: transparent;
   position: relative;
   display: flex;
@@ -90,7 +90,7 @@
 }
 
 .stay-hidden{
-  opacity: 0
+  opacity: 0;
 }
 
 .text {
@@ -133,7 +133,7 @@
   height: 40px;
   width: 40px;
   border-radius: 50%;
-  border : 2px solid #f27242;
+  border : 1px solid #f27242;
   animation: circle 1s ease forwards;
 }
 .progress {
@@ -141,7 +141,7 @@
           transform: rotate(-90deg);
 }
 
-.progress__value {
+.progress-value {
   stroke-dasharray: 339.292;
   stroke-dashoffset: 339.292;
   -webkit-animation: progress 1s infinite;

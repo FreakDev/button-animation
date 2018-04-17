@@ -38,6 +38,8 @@ export default class ButtonAnimation extends React.Component {
         let buttonClass;
         let circleClass;
         let circleProgress;
+        let circleAnimation;
+        let hideCircle;
         let circleFilled;
         let apparitionTick;
         let orderConfirmed;
@@ -51,6 +53,7 @@ export default class ButtonAnimation extends React.Component {
             case STEP2:
                 buttonClass = 'reduce-width'
                 circleClass = 'circle-progress-appear'
+                circleAnimation = 'progress-value'
             break
             case STEP3:
                 buttonClass = 'stay-hidden'
@@ -58,6 +61,8 @@ export default class ButtonAnimation extends React.Component {
             break;
             case STEP4:
                 buttonClass = 'stay-hidden'
+                circleAnimation = 'stay-hidden'
+                hideCircle = 'stay-hidden'
                 apparitionTick = 'tick-appear'
                 orderConfirmed = 'text-appear'
                 circleFilled = 'circle-progress-move'
@@ -71,8 +76,8 @@ export default class ButtonAnimation extends React.Component {
                     <div className= {'initial-state ' + buttonClass}  > confirmer la commande </div>
                     <div className= {'circle-progress ' + circleClass + ' ' + circleProgress}>
                         <svg className="progress" width="50" height="120" viewBox="0 0 120 120">
-                            <circle cx="60" cy="60" r="54" fill="none" stroke="#e6e6e6" strokeWidth="2" />
-                            <circle className="progress__value" cx="60" cy="60" r="54" fill="none" stroke="#f27242" strokeWidth="2" />
+                            <circle className = {hideCircle} cx="60" cy="60" r="54" fill="none" stroke="#e6e6e6" strokeWidth="2" />
+                            <circle className={circleAnimation} cx="60" cy="60" r="54" fill="none" stroke="#f27242" strokeWidth="2" />
                         </svg>
                     </div>
                     <div className= {circleFilled}></div>
