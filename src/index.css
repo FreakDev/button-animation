@@ -2,9 +2,6 @@
   0% {
     stroke-dashoffset: 339.292;
   }
-  50%{
-    stroke-dashoffset: 100.292;
-  }
   100% {
     stroke-dashoffset: 0;
   }
@@ -19,20 +16,18 @@
 }
 @-webkit-keyframes circle {
   0% {
-    opacity: 1;
     transform: translateX(0px);
   }
   100%{
-    transform: translateX(-100px)
+    transform: translateX(-350%)
   } 
 }
 @keyframes circle {
   0% {
-    opacity: 1;
     transform: translateX(0%);
   }
   100%{
-    transform: translateX(-25%)
+    transform: translateX(-350%)
   }
 }
 
@@ -58,7 +53,7 @@
   margin: 20px auto;
   text-decoration: none;
   text-align: center;
-  transition: 0.5s ease;
+  transition: 250ms ease;
 }
 
 .initial-state:hover {
@@ -80,14 +75,14 @@
   background-image: url(http://res.cloudinary.com/dgheqdhp3/image/upload/c_scale,h_20,w_20/v1523626758/tick_hxwfkw.png);
   background-repeat: no-repeat;
   height: 20px;
-  left: 24%;
-  top: -183px;
+  left: 22%;
+  top: -225px;
   background-color: transparent;
   position: relative;
   display: flex;
   opacity: 0;
   transition-duration: 1s;
-  transition-delay: 1s;
+  transition-delay: 2s;
 }
 
 .tick-appear {
@@ -100,20 +95,21 @@
 
 .text {
   position: relative;
-  left: 32%;
-  top: -197px;
+  left: 25%;
+  top: -240px;
   font-size: 13px;
   font-family: Sailec-Bold;
   color: #f27242;
   font-weight: bold;
   display:flex;
   opacity: 0;
-  transition-duration: 500ms;
+  transition-duration: 1s;
   transition-delay: 1s;
 }
 
 .text-appear {
   opacity: 1;
+  left: 32%;
 }
 
 .circle-progress {
@@ -130,6 +126,14 @@
 }
 
 .circle-progress-move {
+  display: block;
+  position: relative;
+  top: -193px;
+  left: 46%;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border : 2px solid #f27242;
   animation: circle 1s ease forwards;
 }
 .progress {
@@ -143,6 +147,8 @@
   -webkit-animation: progress 1s infinite;
           animation: progress 1s infinite;     
 }
+
+
 
 
 

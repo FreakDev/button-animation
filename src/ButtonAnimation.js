@@ -38,6 +38,7 @@ export default class ButtonAnimation extends React.Component {
         let buttonClass;
         let circleClass;
         let circleProgress;
+        let circleFilled;
         let apparitionTick;
         let orderConfirmed;
         
@@ -54,14 +55,12 @@ export default class ButtonAnimation extends React.Component {
             case STEP3:
                 buttonClass = 'stay-hidden'
                 apparitionTick = 'tick-appear'
-                circleProgress ='circle-progress-move'
             break;
             case STEP4:
                 buttonClass = 'stay-hidden'
                 apparitionTick = 'tick-appear'
                 orderConfirmed = 'text-appear'
-                circleProgress = 'circle-progress-move'
-                circleClass ='circle-progress-appear'
+                circleFilled = 'circle-progress-move'
             break
         }
         
@@ -70,12 +69,13 @@ export default class ButtonAnimation extends React.Component {
                 <div id="div"> 
                     {/* affecte une classe différente à chaque élément en fonction de l'état du composant */}
                     <div className= {'initial-state ' + buttonClass}  > confirmer la commande </div>
-                    <div className= {'circle-progress ' + circleClass + ' ' + circleProgress }>
-                        <svg class="progress" width="50" height="120" viewBox="0 0 120 120">
-                            <circle cx="60" cy="60" r="54" fill="none" stroke="#e6e6e6" stroke-width="2" />
-                            <circle class="progress__value" cx="60" cy="60" r="54" fill="none" stroke="#f27242" stroke-width="2" />
+                    <div className= {'circle-progress ' + circleClass + ' ' + circleProgress}>
+                        <svg className="progress" width="50" height="120" viewBox="0 0 120 120">
+                            <circle cx="60" cy="60" r="54" fill="none" stroke="#e6e6e6" strokeWidth="2" />
+                            <circle className="progress__value" cx="60" cy="60" r="54" fill="none" stroke="#f27242" strokeWidth="2" />
                         </svg>
                     </div>
+                    <div className= {circleFilled}></div>
                     <div className= {'tick ' + apparitionTick} > </div>
                     <div className={'text ' + orderConfirmed} >Commande confirmée</div>
                 </div>
