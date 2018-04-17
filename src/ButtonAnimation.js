@@ -21,7 +21,7 @@ export default class ButtonAnimation extends React.Component {
     }
     
     componentWillReceiveProps(){
-       
+        
         if (this.props.stopAt < 2) {
             this.setState({
                 current: STATES[2]
@@ -73,7 +73,7 @@ export default class ButtonAnimation extends React.Component {
             <div>
                 <div id="div"> 
                     {/* affecte une classe différente à chaque élément en fonction de l'état du composant */}
-                    <div className= {'initial-state ' + buttonClass}  > confirmer la commande </div>
+                    <div onClick= { this.props.onClick } className= {'order-main-container_next-step_cta ' + buttonClass}  > confirmer la commande </div>
                     <div className= {'circle-progress ' + circleClass + ' ' + circleProgress}>
                         <svg className="progress" width="50" height="120" viewBox="0 0 120 120">
                             <circle className = {hideCircle} cx="60" cy="60" r="54" fill="none" stroke="#e6e6e6" strokeWidth="2" />
