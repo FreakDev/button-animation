@@ -1,0 +1,77 @@
+
+@font-face {
+    font-family: 'YanoneKaffeesatz-Regular';
+    src: url('./fonts/YanoneKaffeesatz-Regular.eot?#iefix') format('embedded-opentype'),  url('./fonts/YanoneKaffeesatz-Regular.woff') format('woff'), url('./fonts/YanoneKaffeesatz-Regular.ttf')  format('truetype'), url('./fonts/YanoneKaffeesatz-Regular.svg#YanoneKaffeesatz-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}    
+
+@font-face {
+    font-family: 'YanoneKaffeesatz-Light';
+    src: url('./fonts/YanoneKaffeesatz-Light.eot?#iefix') format('embedded-opentype'),  url('./fonts/YanoneKaffeesatz-Light.woff') format('woff'), url('./fonts/YanoneKaffeesatz-Light.ttf')  format('truetype'), url('./fonts/YanoneKaffeesatz-Light.svg#YanoneKaffeesatz-Light') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}    
+
+@font-face { 
+    font-family: 'YanoneKaffeesatz-Bold';
+    src: url('./fonts/YanoneKaffeesatz-Bold.eot?#iefix') format('embedded-opentype'),  url('./fonts/YanoneKaffeesatz-Bold.woff') format('woff'), url('./fonts/YanoneKaffeesatz-Bold.ttf')  format('truetype'), url('./fonts/YanoneKaffeesatz-Bold.svg#YanoneKaffeesatz-Bold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}    
+
+@font-face { 
+    font-family: 'Sailec-Regular';
+    src: url('./fonts/Sailec-Regular.eot?#iefix') format('embedded-opentype'),  url('./fonts/Sailec-Regular.woff') format('woff'), url('./fonts/Sailec-Regular.ttf')  format('truetype'), url('./fonts/Sailec-Regular.svg#Sailec-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}    
+
+@font-face {
+    font-family: 'Sailec-Light';
+    src: url('./fonts/Sailec-Light.eot?#iefix') format('embedded-opentype'),  url('./fonts/Sailec-Light.woff') format('woff'), url('./fonts/Sailec-Light.ttf')  format('truetype'), url('./fonts/Sailec-Light.svg#Sailec-Light') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}    
+
+@font-face {
+    font-family: 'Sailec-Bold';
+    src: url('./fonts/Sailec-Bold.eot?#iefix') format('embedded-opentype'),  url('./fonts/Sailec-Bold.woff') format('woff'), url('./fonts/Sailec-Bold.ttf')  format('truetype'), url('./fonts/Sailec-Bold.svg#Sailec-Bold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}    
+
+@font-face {
+    font-family: 'Sailec-Medium';
+    src: url('./fonts/Sailec-Medium.eot?#iefix') format('embedded-opentype'),  url('./fonts/Sailec-Medium.woff') format('woff'), url('./fonts/Sailec-Medium.ttf')  format('truetype'), url('./fonts/Sailec-Medium.svg#Sailec-Medium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}   
+
+@font-face {
+    font-family: 'Sailec-Book';
+    src: url('./fonts/Sailec-Book.eot?#iefix') format('embedded-opentype'),  url('./fonts/Sailec-Book.woff') format('woff'), url('./fonts/Sailec-Book.ttf')  format('truetype'), url('./fonts/Sailec-Book.svg#Sailec-Book') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face { 
+    font-family: 'Poppins-Regular';
+    src: url('./fonts/Poppins-Regular.eot?#iefix') format('embedded-opentype'),  url('./fonts/Poppins-Regular.woff') format('woff'), url('./fonts/Poppins-Regular.ttf')  format('truetype'), url('./fonts/Poppins-Regular.svg#Poppins-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}    
+
+@font-face { 
+    font-family: 'Poppins-Light';
+    src: url('./fonts/Poppins-Light.eot?#iefix') format('embedded-opentype'),  url('./fonts/Poppins-Light.woff') format('woff'), url('./fonts/Poppins-Light.ttf')  format('truetype'), url('./fonts/Poppins-Light.svg#Poppins-Light') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}    
+
+@font-face { 
+    font-family: 'Poppins-Bold';
+    src: url('./fonts/Poppins-Bold.eot?#iefix') format('embedded-opentype'),  url('./fonts/Poppins-Bold.woff') format('woff'), url('./fonts/Poppins-Bold.ttf')  format('truetype'), url('./fonts/Poppins-Bold.svg#Poppins-Bold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
