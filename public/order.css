@@ -26,8 +26,8 @@
     outline: none;
     -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, .15);
     box-shadow: 0 2px 5px rgba(0, 0, 0, .15)
-}*/
-
+}
+*/
 .order-main-container-payment .order-main-container_next-step_cta:active {
     background-color: #ff7e51;
     -webkit-transform: none;
