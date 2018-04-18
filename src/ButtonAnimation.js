@@ -65,7 +65,7 @@ export default class ButtonAnimation extends React.Component {
                 hideCircle = 'stay-hidden'
                 apparitionTick = 'tick-appear'
                 orderConfirmed = 'text-appear'
-                circleFilled = 'circle-progress-move'
+                circleFilled = 'circle-move'
             break
         }
         
@@ -73,14 +73,15 @@ export default class ButtonAnimation extends React.Component {
             <div>
                 <div id="div"> 
                     {/* affecte une classe différente à chaque élément en fonction de l'état du composant */}
-                    <div onClick= { this.props.onClick } className= {'order-main-container_next-step_cta ' + buttonClass}  > confirmer la commande </div>
+                    <div onClick= { this.props.onClick } className= {'order-main-container_next-step_cta ' + buttonClass}  > confirmer la commande 
                     <div className= {'circle-progress ' + circleClass + ' ' + circleProgress}>
                         <svg className="progress" width="50" height="120" viewBox="0 0 120 120">
                             <circle className = {hideCircle} cx="60" cy="60" r="54" fill="none" stroke="#e6e6e6" strokeWidth="2" />
                             <circle className={circleAnimation} cx="60" cy="60" r="54" fill="none" stroke="#f27242" strokeWidth="2" />
                         </svg>
                     </div>
-                    <div className= {circleFilled}></div>
+                    </div>
+                    <div className= {'circle ' + circleFilled}></div>
                     <div className= {'tick ' + apparitionTick} > </div>
                     <div className={'text ' + orderConfirmed} >Commande confirmée</div>
                 </div>
