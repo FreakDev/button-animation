@@ -14,22 +14,6 @@
     stroke-dashoffset: 0;
   }
 }
-@-webkit-keyframes circle {
-  0% {
-    transform: translateX(0px);
-  }
-  100%{
-    transform: translateX(-40%)
-  } 
-}
-@keyframes circle {
-  0% {
-    transform: translateX(0%);
-  }
-  100%{
-    transform: translateX(40%)
-  }
-}
 
 #div{
   margin: 20px auto 0;
@@ -141,7 +125,6 @@
   border : 1px solid #f27242;
   opacity: 0;
   transition: 1s ease;
-  /*animation: circle 1s ease forwards;*/
 }
 
 .circle-move {
