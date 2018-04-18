@@ -19,7 +19,7 @@
     transform: translateX(0px);
   }
   100%{
-    transform: translateX(-350%)
+    transform: translateX(-40%)
   } 
 }
 @keyframes circle {
@@ -27,7 +27,7 @@
     transform: translateX(0%);
   }
   100%{
-    transform: translateX(-350%)
+    transform: translateX(40%)
   }
 }
 
@@ -41,6 +41,8 @@
   height: 50px;
   width: 352px;
   line-height: 50px;
+  position: relative;
+  right: 90px;
   color: #fff;
   background: #f27242;
   display: block;
@@ -50,10 +52,10 @@
   letter-spacing: 1px;
   text-transform: uppercase;
   border-radius: 3px;
-  margin: 20px auto;
+  margin: 0 auto;
   text-decoration: none;
   text-align: center;
-  transition: 250ms ease;
+  transition: 1s ease;
 }
 
 .order-main-container_next-step_cta:hover {
@@ -75,8 +77,9 @@
   background-image: url(http://res.cloudinary.com/dgheqdhp3/image/upload/c_scale,h_15,w_15/v1523967417/tick_fvfccf.png);
   background-repeat: no-repeat;
   height: 20px;
-  left: 23%;
-  top: -168px;
+  width: 30px;
+  left: 12%;
+  top: -87px;
   background-color: transparent;
   position: relative;
   display: flex;
@@ -95,8 +98,8 @@
 
 .text {
   position: relative;
-  left: 40%;
-  top: -185px;
+  left: 15%;
+  top: -104px;
   font-size: 13px;
   font-family: Sailec-Bold;
   color: #f27242;
@@ -109,13 +112,15 @@
 
 .text-appear {
   opacity: 1;
-  left: 32%;
+  left: 20%;
 }
 
 .circle-progress {
-  display: block;
+  display: flex;
   position: relative;
-  top: -96px;
+  height: 50px;
+  width: 60px;
+  top: -50px;
   margin: 0 auto;
   opacity: 0;
   transition: 1s
@@ -125,17 +130,26 @@
   opacity: 1;
 }
 
-.circle-progress-move {
+.circle {
   display: block;
   position: relative;
-  top: -96px;
-  margin: 0 auto;
+  top: -55px;
+  left: 30%;
   height: 40px;
   width: 40px;
   border-radius: 50%;
   border : 1px solid #f27242;
-  animation: circle 1s ease forwards;
+  opacity: 0;
+  transition: 1s ease;
+  /*animation: circle 1s ease forwards;*/
 }
+
+.circle-move {
+  left: 10%;
+  opacity: 1
+}
+
+
 .progress {
   -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg);
@@ -148,10 +162,5 @@
           animation: progress 1s infinite;     
 }
 
-#trigger {
-  position: relative;
-  top: -146px;
-  margin: 0 auto;
-}
   
   
