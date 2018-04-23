@@ -39,7 +39,12 @@
   margin: 0 auto;
   text-decoration: none;
   text-align: center;
-  transition: 1s ease;
+  transition: 1s;
+}
+
+.reduce-width{
+  width: 0px;
+  opacity: 0;
 }
 
 .order-main-container_next-step_cta:hover {
@@ -52,18 +57,14 @@
   box-shadow:0 2px 5px rgba(0,0,0,.15)
 }
 
-.reduce-width{
-  width: 0px;
-  opacity: 0;
-}
 
 .tick{
   background-image: url(http://res.cloudinary.com/dgheqdhp3/image/upload/c_scale,h_15,w_15/v1523967417/tick_fvfccf.png);
   background-repeat: no-repeat;
   height: 20px;
   width: 30px;
-  left: 12%;
-  top: -87px;
+  left: 12.5%;
+  top: -136px;
   background-color: transparent;
   position: relative;
   display: flex;
@@ -83,7 +84,7 @@
 .text {
   position: relative;
   left: 15%;
-  top: -104px;
+  top: -150px;
   font-size: 13px;
   font-family: Sailec-Bold;
   color: #f27242;
@@ -99,28 +100,13 @@
   left: 20%;
 }
 
-.circle-progress {
-  display: flex;
-  position: relative;
-  height: 50px;
-  width: 60px;
-  top: -50px;
-  margin: 0 auto;
-  opacity: 0;
-  transition: 1s
-}
-
-.circle-progress-appear {
-  opacity: 1;
-}
-
 .circle {
   display: block;
   position: relative;
-  top: -55px;
+  top: -105px;
   left: 30%;
-  height: 40px;
-  width: 40px;
+  height: 45px;
+  width: 45px;
   border-radius: 50%;
   border : 1px solid #f27242;
   opacity: 0;
@@ -132,10 +118,21 @@
   opacity: 1
 }
 
-
 .progress {
   -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  display: flex;
+  position: relative;
+  height: 50px;
+  width: 60px;
+  top: -60px;
+  left: 29%;
+  opacity: 0;
+  transition: 0.5s;
+  transition-delay: 0.5s;
+}
+.progress-appear {
+  opacity: 1;
 }
 
 .progress-value {
