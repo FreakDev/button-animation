@@ -48,7 +48,7 @@
 
 .order-main-container-payment .order-main-container_next-step_cta {
     margin: 0 auto 10px;
-    width: 352px;
+    /*width: 352px;*/
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     padding: 0;
