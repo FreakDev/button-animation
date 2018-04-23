@@ -5,10 +5,8 @@ import './index.css';
 const INITIAL_STATE = 'a'
 const STEP1 = 'b'
 const STEP2 = 'c'
-const STEP3 = 'd'
-const STEP4 = 'e'
 
-const STATES = [INITIAL_STATE, STEP1, STEP2, STEP3, STEP4]
+const STATES = [INITIAL_STATE, STEP1, STEP2]
 
 export default class ButtonAnimation extends React.Component {
 
@@ -24,56 +22,43 @@ export default class ButtonAnimation extends React.Component {
         
         if (this.props.stopAt < 2) {
             this.setState({
-                current: STATES[2]
+                current: STATES[1]
             })
         } else {
             this.setState({
-                    current: STATES[4]
+                    current: STATES[2]
                 })   
         }
     }
 
     render() {
         
-        let buttonClass;
-        let progressCircle;
-        let circleAnimation;
-        let hideCircle;
-        let circleMove;
-        let apparitionTick;
-        let orderConfirmed;
+        let buttonClass='';
+        let progressCircle='';
+        let circleAnimation='';
+        let hideCircle='';
+        let circleMove='';
+        let apparitionTick='';
+        let orderConfirmed='';
         
         switch(this.state.current){
 
             case STEP1:
                 buttonClass = 'reduce-width'
                 progressCircle = 'progress-appear'
-                circleAnimation = 'progress-value'
-                console.log('step 1 ' + buttonClass)
-
             break
             case STEP2:
-                buttonClass = 'reduce-width'
-                progressCircle = 'progress-appear'
-                console.log('step 2 ' + buttonClass)
-            break
-            /*case STEP3:
-                buttonClass = 'stay-hidden'
-                apparitionTick = 'tick-appear'
-                console.log('step 3 ' + buttonClass)
-            break;*/
-            case STEP4:
                 buttonClass = 'stay-hidden'
                 circleAnimation = 'stay-hidden'
                 hideCircle = 'stay-hidden'
+                circleMove = 'circle-move'
                 apparitionTick = 'tick-appear'
                 orderConfirmed = 'text-appear'
-                circleMove = 'circle-move'
             break
         }
         
         return (
-            <div id="div">
+            <div>
                 {/* affecte une classe différente à chaque élément en fonction del'état du composant */}
                 <div onClick= { this.props.onClick } className={'order-main-container_next-step_cta ' + buttonClass}  > confirmer la commande </div>
                 <div>
