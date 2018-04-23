@@ -26,7 +26,7 @@ export default class Page extends React.Component {
                     stopAt: 4 ,
                     busy: false
                 })                
-            }, 3000)    
+            }, 5000)    
         }
     }
 

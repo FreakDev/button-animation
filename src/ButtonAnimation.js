@@ -36,11 +36,10 @@ export default class ButtonAnimation extends React.Component {
     render() {
         
         let buttonClass;
-        let circleClass;
-        let circleProgress;
+        let progressCircle;
         let circleAnimation;
         let hideCircle;
-        let circleFilled;
+        let circleMove;
         let apparitionTick;
         let orderConfirmed;
         
@@ -48,43 +47,44 @@ export default class ButtonAnimation extends React.Component {
 
             case STEP1:
                 buttonClass = 'reduce-width'
-                circleClass = 'circle-animation'
+                progressCircle = 'progress-appear'
+                circleAnimation = 'progress-value'
+                console.log('step 1 ' + buttonClass)
+
             break
             case STEP2:
                 buttonClass = 'reduce-width'
-                circleClass = 'circle-progress-appear'
-                circleAnimation = 'progress-value'
+                progressCircle = 'progress-appear'
+                console.log('step 2 ' + buttonClass)
             break
-            case STEP3:
+            /*case STEP3:
                 buttonClass = 'stay-hidden'
                 apparitionTick = 'tick-appear'
-            break;
+                console.log('step 3 ' + buttonClass)
+            break;*/
             case STEP4:
                 buttonClass = 'stay-hidden'
                 circleAnimation = 'stay-hidden'
                 hideCircle = 'stay-hidden'
                 apparitionTick = 'tick-appear'
                 orderConfirmed = 'text-appear'
-                circleFilled = 'circle-move'
+                circleMove = 'circle-move'
             break
         }
         
         return (
-            <div>
-                <div id="div"> 
-                    {/* affecte une classe différente à chaque élément en fonction de l'état du composant */}
-                    <div onClick= { this.props.onClick } className= {'order-main-container_next-step_cta ' + buttonClass}  > confirmer la commande 
-                    <div className= {'circle-progress ' + circleClass + ' ' + circleProgress}>
-                        <svg className="progress" width="50" height="120" viewBox="0 0 120 120">
-                            <circle className = {hideCircle} cx="60" cy="60" r="54" fill="none" stroke="#e6e6e6" strokeWidth="2" />
-                            <circle className={circleAnimation} cx="60" cy="60" r="54" fill="none" stroke="#f27242" strokeWidth="2" />
-                        </svg>
-                    </div>
-                    </div>
-                    <div className= {'circle ' + circleFilled}></div>
-                    <div className= {'tick ' + apparitionTick} > </div>
-                    <div className={'text ' + orderConfirmed} >Commande confirmée</div>
+            <div id="div">
+                {/* affecte une classe différente à chaque élément en fonction del'état du composant */}
+                <div onClick= { this.props.onClick } className={'order-main-container_next-step_cta ' + buttonClass}  > confirmer la commande </div>
+                <div>
+                    <svg className={"progress " + progressCircle} width="50" height="120" viewBox="0 0 120 120">
+                        <circle className = {hideCircle} cx="60" cy="60" r="54" fill="none" stroke="#e6e6e6" strokeWidth="2" />
+                        <circle className={'progress-value ' + circleAnimation} cx="60" cy="60" r="54" fill="none" stroke="#ed6330" strokeWidth="2" />
+                    </svg>
                 </div>
+                <div className= {'circle ' + circleMove}></div>
+                <div className= {'tick ' + apparitionTick} > </div>
+                <div className={'text ' + orderConfirmed} >Commande confirmée</div>
             </div>
         )    
     }
