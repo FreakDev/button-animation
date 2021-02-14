@@ -5,108 +5,72 @@ import './index.css';
 const INITIAL_STATE = 'a'
 const STEP1 = 'b'
 const STEP2 = 'c'
-const STEP3 = 'd'
-const STEP4 = 'e'
 
-const STATES = [INITIAL_STATE, STEP1, STEP2, STEP3, STEP4]
+const STATES = [INITIAL_STATE, STEP1, STEP2]
 
 export default class ButtonAnimation extends React.Component {
 
     constructor (props) {
         super(props)
- 
-        this.buttonRef = null;
-        this.setButtonRef = buttonElement => {
-            this.buttonRef = buttonElement;
-        }
-        this.loadingCircleRef = null;
-        this.setLoadingCircleRef = loadingCircle => {
-            this.loadingCircleRef = loadingCircle;
-        }
-        this.tickRef = null;
-        this.setTickRef = tick => {
-            this.tickRef = tick
-        }
+
         this.state = {
             current: INITIAL_STATE 
         }
-        this.handleClick = this.handleClick.bind(this)
-        this.goNextState = this.goNextState.bind(this)
-    }
-
-    componentDidMount() {
-        this.buttonRef.addEventListener('transitionend', this.goNextState)
-        this.loadingCircleRef.addEventListener('transitionend', this.goNextState)
-        this.tickRef.addEventListener('transitionend', this.goNextState)
-    }
-    componentWillUnmount() {
-        this.buttonRef.addEventListener('transitionend', this.goNextState)
-        this.loadingCircleRef.addEventListener('transitionend', this.goNextState)
-        this.tickRef.addEventListener('transitionend', this.goNextState)
     }
     
-    goNextState () {
-
-        // calcul le prochain état que devra prendre l'application
-        let currentStateIndex = STATES.indexOf(this.state.current) 
-        let nextStateIndex = currentStateIndex + 1 
+    componentWillReceiveProps(){
         
-        if (nextStateIndex >= STATES.length) { 
-            nextStateIndex = 0
+        if (this.props.stopAt < 2) {
+            this.setState({
+                current: STATES[1]
+            })
+        } else {
+            this.setState({
+                    current: STATES[2]
+                })   
         }
-        
-        // change la valeur de l'état courant à la prochaine valeur prévue
-        this.setState({
-            current: STATES[nextStateIndex] 
-        })
     }
 
-    handleClick(){
-        this.goNextState()
-    }
     render() {
         
-        let buttonClass;
-        let circleClass;
-        let apparitionTick;
-        let orderConfirmed;
+        let buttonClass='';
+        let progressCircle='';
+        let circleAnimation='';
+        let hideCircle='';
+        let circleMove='';
+        let apparitionTick='';
+        let orderConfirmed='';
         
         switch(this.state.current){
 
             case STEP1:
                 buttonClass = 'reduce-width'
+                progressCircle = 'progress-appear'
             break
             case STEP2:
                 buttonClass = 'stay-hidden'
-                circleClass = 'circle-animation'
-            break
-            
-            case STEP3:
-                buttonClass = 'stay-hidden' 
-                apparitionTick = 'tick-appear'
-                circleClass ='circle-animation'
-            break;
-            case STEP4:
-                buttonClass = 'stay-hidden'
+                circleAnimation = 'stay-hidden'
+                hideCircle = 'stay-hidden'
+                circleMove = 'circle-move'
                 apparitionTick = 'tick-appear'
                 orderConfirmed = 'text-appear'
-                circleClass ='circle-animation'
-            break;
+            break
         }
         
         return (
             <div>
-                <div id="div"> 
-                    {/* affecte une classe différente à chaque élément en fonction de l'état du composant */}
-                    <button className= {'initial-state ' + buttonClass} ref = {this.setButtonRef} onClick={this.handleClick}>submit</button>
-                    <div className = {'circle ' + circleClass} ref={this.setLoadingCircleRef}></div>
-                    <button className= {'tick ' + apparitionTick} ref={this.setTickRef}>tick</button>
-                    <p className={'text ' + orderConfirmed} >commande confirmée</p>
-                </div>
+                {/* affecte une classe différente à chaque élément en fonction del'état du composant */}
+                <div onClick= { this.props.onClick } className={'order-main-container_next-step_cta ' + buttonClass}  > confirmer la commande </div>
                 <div>
+                    <svg className={"progress " + progressCircle} width="50" height="120" viewBox="0 0 120 120">
+                        <circle className = {hideCircle} cx="60" cy="60" r="54" fill="none" stroke="#e6e6e6" strokeWidth="2" />
+                        <circle className={'progress-value ' + circleAnimation} cx="60" cy="60" r="54" fill="none" stroke="#ed6330" strokeWidth="2" />
+                    </svg>
                 </div>
-                <button id="btn-test" onClick={this.handleClick}>test</button>
+                <div className= {'circle ' + circleMove}></div>
+                <div className= {'tick ' + apparitionTick} > </div>
+                <div className={'text ' + orderConfirmed} >Commande confirmée</div>
             </div>
-        );    
+        )    
     }
 }

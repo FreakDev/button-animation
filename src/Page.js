@@ -8,29 +8,36 @@ export default class Page extends React.Component {
         super(props)
 
         this.state = {
-            stopAt: 0
+            stopAt: 0,
+            busy: false
         }
 
         this.onClick = this.onClick.bind(this)
     }
 
     onClick () {
-        this.setState({
-            stopAt: this.state.stopAt === 0 ? 2 : 4 
-        })
+        if (!this.state.busy) {
+            this.setState({
+                stopAt: 2,
+                busy: true
+            })
+            setTimeout(() => {
+                this.setState({
+                    stopAt: 4 ,
+                    busy: false
+                })                
+            }, 3000)    
+        }
     }
 
-    onAnimationEnd () {
+    onAnimationEnd= () => {
         console.log('whole animation ends')
+
     }
 
     render () {
         return (
-            <div>
-                <ButtonAnimation stopAt={ this.state.stopAt } onAnimationEnd={ this.onAnimationEnd } />
-
-                <button onClick={ this.onClick } >trigger</button>
-            </div>
+            <ButtonAnimation stopAt={ this.state.stopAt } onClick={ this.onClick } onAnimationEnd={ this.onAnimationEnd} />
         )
     }
 }

@@ -1,100 +1,140 @@
-
-div{
-  position: relative;
-  display: block;
-  text-align: center;
+@-webkit-keyframes progress {
+  0% {
+    stroke-dashoffset: 339.292;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes progress {
+  0% {
+    stroke-dashoffset: 339.292;
+  }
+  100%{
+    stroke-dashoffset: 0;
+  }
 }
 
-.initial-state {
-  background: orange;
-  color: white;
-  font-size: 12px;
-  display: block;
+.order-main-container_next-step_cta {
+  height: 50px;
+  width: 352px;
+  line-height: 50px;
   position: relative;
-  margin: 0 auto;
-  padding: 0;
-  width: 200px;
-  height: 70px;
-  border: 2px solid orange;
-  border-radius: 4px;
-  background: orange;
-  color: white;
+  right: 90px;
+  color: #fff;
+  background: #f27242;
+  display: block;
+  border: 0 solid transparent;
+  font-family: Sailec-Bold;
+  font-size: 13px;
   letter-spacing: 1px;
-  font-size: 24px;
-  opacity: 1;
-  transition: width 1s, opacity 1s;
+  text-transform: uppercase;
+  border-radius: 3px;
+  left: 0%;
+  text-decoration: none;
+  text-align: center;
+  transition: 1s;
 }
 
 .reduce-width{
-  width: 10px;
+  width: 0px;
   opacity: 0;
 }
 
-.circle{
-  opacity: 0;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background-color: white;
-  border: 5px solid orange;
-  position: relative;
-  top: -70px;
-  left: 46%;
-  transition: opacity 2s, left 2s,
+.order-main-container_next-step_cta:hover {
+  cursor: pointer;
+  background-color:#ed6330;
+  -webkit-transform:translateY(-2px);
+  transform:translateY(-2px);
+  outline:none;
+  -webkit-box-shadow:0 2px 5px rgba(0,0,0,.15);
+  box-shadow:0 2px 5px rgba(0,0,0,.15)
 }
 
-.circle-animation {
-  left: 25%;
-  opacity: 1;
-}
 
 .tick{
-  left: -177px;
-  top: -135px;
-  font-size: 5px;
+  background-image: url(http://res.cloudinary.com/dgheqdhp3/image/upload/c_scale,h_15,w_15/v1523967417/tick_fvfccf.png);
+  background-repeat: no-repeat;
+  height: 20px;
+  width: 30px;
+  left: 24%;
+  top: -140px;
   background-color: transparent;
   position: relative;
-  border: 0px;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
+  display: flex;
   opacity: 0;
-  transition: opacity 2s, font-size 1s;
+  transition-duration: 1s;
+  transition-delay: 2s;
 }
 
 .tick-appear {
   opacity: 1;
-  font-size: 20px
 }
 
 .stay-hidden{
-  opacity: 0
+  opacity: 0;
 }
 
 .text {
   position: relative;
-  left: -110px;
-  top: -180px;
-  font-size: 14px;
-  text-transform: uppercase;
+  left: 32%;
+  top: -155px;
+  font-size: 15px;
+  font-family: Sailec-Bold;
+  color: #f27242;
+  font-weight: bold;
+  display:flex;
   opacity: 0;
-  transition: opacity 3s, left 2s;
+  transition-duration: 1s;
+  transition-delay: 1s;
 }
 
 .text-appear {
   opacity: 1;
-  left: 0px;
+  left: 35%;
 }
 
-#btn-test {
-  top: 300px;
+.circle {
+  display: block;
   position: relative;
-  height: 40px;
-  width: 100px;
-  background-color: white;
-  border: 3px solid black;
-  color: black;
+  top: -109px;
+  left: 44.5%;
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  border : 1px solid #f27242;
+  opacity: 0;
+  transition: 1s ease;
 }
-  
+
+.circle-move {
+  left: 20%;
+  opacity: 1
+}
+
+.progress {
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  display: flex;
+  position: relative;
+  height: 50px;
+  width: 60px;
+  top: -60px;
+  left: 43%;
+  opacity: 0;
+  transition: 0.5s;
+  transition-delay: 0.5s;
+}
+.progress-appear {
+  opacity: 1;
+}
+
+.progress-value {
+  stroke-dasharray: 339.292;
+  stroke-dashoffset: 339.292;
+  -webkit-animation: progress 1s infinite;
+          animation: progress 1s infinite;     
+}
+
   
   
